@@ -27,7 +27,15 @@ And then execute:
 
 ## Usage
 
-To execute any rake task on the server, you need to pass that task's name to the `invoke:rake`
+After installation, add it to your `Capfile`:
+
+```ruby
+# Capfile
+
+require 'capistrano/rake'
+```
+
+To execute a rake task on a remote server, you need to pass that task's name to the `invoke:rake`
 capistrano task like this:
 
 ```bash
