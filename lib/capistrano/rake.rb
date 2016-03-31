@@ -1,7 +1,4 @@
 require "capistrano/rake/version"
 
-module Capistrano
-  module Rake
-    # Your code goes here...
-  end
-end
+load File.expand_path('../tasks/invoke.rake', __FILE__)
+
