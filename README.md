@@ -19,21 +19,16 @@ group :development do
 end
 ```
 
-And then execute:
-
-    $ bundle
-
-
-
-## Usage
-
-After installation, add it to your `Capfile`:
+Then `bundle` and add it to your `Capfile`:
 
 ```ruby
 # Capfile
 
 require 'capistrano/rake'
 ```
+
+
+## Usage
 
 To execute a rake task on a remote server, you need to pass that task's name to the `invoke:rake`
 capistrano task like this:
