@@ -1,9 +1,12 @@
 namespace :invoke do
 
-  desc "Execute a rake task on a remote server"
+  # Defalut to :app roles
+  rake_roles = fetch(:rake_roles, :app)
+
+  desc "Execute a rake task on a remote server (cap invoke:rake TASK=db:migrate)"
   task :rake do
     if ENV['TASK']
-      on roles(:app) do
+      on roles(fetch(:rake_roles)) do
         within current_path do
           with rails_env: fetch(:rails_env) do
             execute :rake, ENV['TASK']
@@ -18,4 +21,3 @@ namespace :invoke do
   end
 
 end
-
