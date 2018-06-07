@@ -27,6 +27,14 @@ Then `bundle` and add it to your `Capfile`:
 require 'capistrano/rake'
 ```
 
+## Configuration
+
+The following configuration is available:
+
+```ruby
+  # Defaults to [:app]
+  set :rake_roles, [:db, :app]
+```
 
 ## Usage
 
@@ -56,4 +64,3 @@ $ cap production invoke:rake TASK=paperclip:refresh
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
