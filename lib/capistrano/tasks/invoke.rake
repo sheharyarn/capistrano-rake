@@ -6,7 +6,7 @@ namespace :invoke do
   desc "Execute a rake task on a remote server (cap invoke:rake TASK=db:migrate)"
   task :rake do
     if ENV['TASK']
-      on roles(fetch(:rake_roles)) do
+      on roles(rake_roles) do
         within current_path do
           with rails_env: fetch(:rails_env) do
             execute :rake, ENV['TASK']
