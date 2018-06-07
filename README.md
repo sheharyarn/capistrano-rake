@@ -1,10 +1,10 @@
-
 capistrano-rake
 ===============
 
 Invoke any `rake` task on a remote server using [`capistrano`](https://capistranorb.com/).
 Installing this gem adds a new capistrano task `invoke:rake` that will allow you to
 execute rake tasks remotely. __Only supports Capistrano 3 and above__.
+
 
 
 ## Installation
@@ -27,14 +27,7 @@ Then `bundle` and add it to your `Capfile`:
 require 'capistrano/rake'
 ```
 
-## Configuration
 
-The following configuration is available:
-
-```ruby
-  # Defaults to [:app]
-  set :rake_roles, [:db, :app]
-```
 
 ## Usage
 
@@ -51,6 +44,18 @@ $ cap production invoke:rake TASK=paperclip:refresh
 ```
 
 
+
+## Configuration
+
+You can optionally specify the capistrano roles for the rake task (Defaults to `:app`):
+
+```ruby
+# Defaults to [:app]
+set :rake_roles, [:db, :app]
+```
+
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/sheharyarn/capistrano-rake/fork )
@@ -64,3 +69,4 @@ $ cap production invoke:rake TASK=paperclip:refresh
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
