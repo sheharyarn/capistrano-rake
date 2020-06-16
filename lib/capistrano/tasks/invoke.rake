@@ -1,11 +1,12 @@
 namespace :invoke do
 
-  # Defalut to :app roles
-  rake_roles = fetch(:rake_roles, :app)
 
   desc "Execute a rake task on a remote server (cap invoke:rake TASK=db:migrate)"
   task :rake do
     if ENV['TASK']
+      # Default to :app roles
+      rake_roles = fetch(:rake_roles, :app)
+
       on roles(rake_roles) do
         within current_path do
           with rails_env: fetch(:rails_env) do
